@@ -126,7 +126,8 @@ while cap.isOpened():
                 for temp_canvas in screen.get_all_canvas():
                     number_of_canvases = len(screen.get_all_canvas())
                     canvas_length = (w / number_of_canvases + 1)
-
+                    
+                    
                 new_canvas = Canvas(w, h)
                 screen.add_canvas(new_canvas)
                 canvas = screen.get_canvas(current_canvas_count)
