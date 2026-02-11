@@ -1,3 +1,10 @@
+import warnings
+import os
+warnings.filterwarnings("ignore")
+os.environ["NO_ALBUMENTATIONS_UPDATE"] = "1"
+os.environ["GRPC_VERBOSITY"] = "ERROR"
+os.environ["GLOG_minloglevel"] = "3"
+
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -7,8 +14,8 @@ from mediapipe.tasks.python import vision
 
 from canvas import Canvas
 from screen import Screen
-# from solver import Solver          # Gemini API solver (kept for reference)
-from LocalMathSolver import LocalMathSolver  # Offline local solver
+from solver import Solver
+# from LocalMathSolver import LocalMathSolver
 
 from distance import calc_distance, calc_distance_regular
 
@@ -27,7 +34,7 @@ save_counter = 1
 
 screen = Screen()
 canvas = None
-solver = LocalMathSolver()
+solver = Solver()
 
 pen = False
 
